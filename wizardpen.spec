@@ -19,7 +19,6 @@ BuildRequires:	x11-server-devel
 BuildRequires:	%{_lib}xext6-devel
 BuildRequires:	x11-util-macros
 
-
 %description
 Wizardpen Driver for Linux.
 What are referred to as "Genius Tablets" go by many names:
@@ -49,11 +48,11 @@ What are referred to as "Genius Tablets" go by many names:
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 make install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
@@ -61,4 +60,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/xorg/modules/input/wizardpen_drv.la
 %{_libdir}/xorg/modules/input/wizardpen_drv.so
 %{_mandir}/man4/wizardpen.4.lzma
-
