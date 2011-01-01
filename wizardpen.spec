@@ -59,4 +59,4 @@ rm -rf %{buildroot}
 %doc
 %{_libdir}/xorg/modules/input/wizardpen_drv.la
 %{_libdir}/xorg/modules/input/wizardpen_drv.so
-%{_mandir}/man4/wizardpen.4.lzma
+%{_mandir}/man4/
