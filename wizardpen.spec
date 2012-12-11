@@ -9,13 +9,12 @@ Version:	%{version}
 Release:	%{release}
 Summary:	Wizardpen Driver for Linux
 Group:		System/X11
-License:	BSD/MIT
+License:	GPLv2+
 URL:		https://launchpad.net/wizardpen
 Source0:	http://launchpad.net/wizardpen/trunk/0.8/+download/xorg-input-%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:	x11-proto-devel
 BuildRequires:	x11-server-devel
-BuildRequires:	x11-util-macros
+BuildRequires:	pkgconfig(xorg-macros)
 
 %description
 Wizardpen Driver for Linux.
@@ -46,18 +45,12 @@ What are referred to as "Genius Tablets" go by many names:
 %make
 
 %install
-rm -rf %{buildroot}
 make install DESTDIR=$RPM_BUILD_ROOT
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root,-)
 %doc
-%{_libdir}/xorg/modules/input/wizardpen_drv.la
 %{_libdir}/xorg/modules/input/wizardpen_drv.so
 %{_bindir}/wizardpen-calibrate
 %{_datadir}/X11/xorg.conf.d/70-wizardpen.conf
 %{_sysconfdir}/udev/rules.d/67-xorg-wizardpen.rules
-%{_mandir}/man4/
+%{_mandir}/man4/%name.*
