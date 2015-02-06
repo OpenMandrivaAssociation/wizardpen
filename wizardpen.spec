@@ -1,6 +1,6 @@
 %define name wizardpen
 %define version 0.8.1
-%define release %mkrel 1
+%define release 2
 
 %define __libtoolize /bin/true
 
