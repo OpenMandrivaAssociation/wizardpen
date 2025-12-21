@@ -12,6 +12,11 @@ Group:		System/X11
 License:	GPLv2+
 URL:		https://launchpad.net/wizardpen
 Source0:	http://launchpad.net/wizardpen/trunk/0.8/+download/xorg-input-%{name}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	x11-proto-devel
 BuildRequires:	x11-server-devel
 BuildRequires:	pkgconfig(xorg-macros)
